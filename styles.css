@@ -1,0 +1,67 @@
+body {
+    background : #8E4739}
+
+.topnav {
+    background-color: #020202;
+    overflow: hidden;
+}
+
+.topnav a {
+    float: left;
+    color: white ;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #fefae0;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #cdb4db;
+    color: white;
+}
+.navbar-inner {
+    background:transparent;
+}
+h1 {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(158, 123, 129);
+
+
+}
+.topnav {
+    background-color: #000000;
+    overflow: hidden;
+}
+
+.topnav a {
+    float: left;
+    color: white ;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #fefae0;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #cdb4db;
+    color: white;
+}
+.navbar-inner {
+    background:transparent;
+}
+h1 {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(158, 123, 129);
+
+
+}
