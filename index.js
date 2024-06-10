@@ -9,3 +9,8 @@ const express = require('express')
     app.get('/', (req, res) => {
         res.send('Hello World');
     })
+
+    app.get('/about', (req, res) => {
+        res.send('<h1>About page</h1>')
+    })
+    
