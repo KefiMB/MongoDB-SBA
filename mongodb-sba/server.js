@@ -30,3 +30,35 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
 });
+
+// Parse JSON request bodies
+app.use(express.json());
+
+// GET all users
+app.get('/users', async (req, res) => {
+  try {
+    const users = await User.find();
+    res.json(users);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+// CREATE a new user
+app.post('/users', async (req, res) => {
+  const user = new User({
+    name: req.body.name,
+    email: req.body.email,
+    age: req.body.age
+  });
+
+  try {
+    const savedUser = await user.save();
+    res.status(201).json(savedUser);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
+// Importing user to server.js
+const User = require('./models/User');

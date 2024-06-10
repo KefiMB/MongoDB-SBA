@@ -1,6 +1,6 @@
-const { Schema, model } = require('../config/db-connection');
+const mongoose = require('mongoose');
 
-const userSchema = Schema({
+const userSchema = new mongooSchema({
   email: {
     type: String,
     required: true,
@@ -14,4 +14,4 @@ const userSchema = Schema({
   },
 });
 
-module.exports = model('User', userSchema);
+module.exports = mongoose.model('User', userSchema);
