@@ -16,4 +16,31 @@ const express = require('express')
 
     app.get('contact', (req, res) => {
         res.send('The parameter' +req.params.id)
+
     })
+// Validation
+    db.createCollection("users", {
+        validator: {
+           jsonSchema: {
+              bsonType: "object",
+              required: ["name", "email", "city"],
+              properties: {
+                 name: {
+                    bsonType: "string",
+                    description: "must be a string and is required"
+                 },
+                 email: {
+                    bsonType: "string",
+                    pattern: "@example\.com",
+                    description: "must be a string and match the regular expression pattern"
+                 },
+                 city: {
+                    bsonType: "string",
+                    description: "must be a string and is required"
+                 }
+              }
+           }
+        }
+     })
+
+    db.users.createIndex({email: 1, city: 1}, {unique: true})
